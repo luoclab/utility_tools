@@ -1,13 +1,44 @@
 # -*- coding: utf-8 -*-            
 # @Author : luojincheng
 # @Time : 2025/2/11 
-
+目标是把分类数据集按照ratio比率划分为训练集和测试集
 import os
 import numpy as np
 import shutil
 from tqdm import tqdm
 
 def devide_dataset(origin_dataset_path, destination_path, ratio=0.1):
+    """
+    origin_dataset_path:
+    原始数据集路径,路径包含目录如下：
+    dataset/
+        cls1/
+            file1
+            file2
+        cls2/
+            file1
+            file2
+            ...
+    destination_path
+    
+     dataset/
+         train:
+            cls1/
+                file1
+                file2
+            cls2/
+                file1
+                file2
+                ...
+        test:
+            cls1/
+                file1
+                file2
+            cls2/
+                file1
+                file2
+                ...
+    """
     # 检查源数据集是否存在
     if not os.path.exists(origin_dataset_path):
         raise FileNotFoundError(f"Error: {origin_dataset_path} does not exist!")
