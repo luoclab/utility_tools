@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-            
 # @Author : luojincheng
 # @Time : 2025/2/11 
-目标是把分类数据集按照ratio比率划分为训练集和测试集
+# 目标是把分类数据集按照ratio比率划分为训练集和测试集
 import os
 import numpy as np
 import shutil
